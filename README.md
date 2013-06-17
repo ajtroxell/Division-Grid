@@ -3,9 +3,9 @@ Division isn't anything revolutionary when it comes to grids or grid customizati
 
 There are a couple major differences between Division and a grid like Foundation or Twitter Bootstrap. First is the naming convention, which is set up for lightning fast prototyping. You no longer have to be concerned with how many columns an element must be in order to be two thirds, one third, or three-fifths. This is an excellent starting point for designers who are doing rapid prototyping of a concept before handing it over to developers.
 
-Second is the amount of clutter. It is a very clean shop in comparison to other popular grids. While using a simple CSS reset, thanks to [http://meyerweb.com/eric/tools/css/reset/](Eric Meyer), we keep the rest of our grid to a minimum. You don't need to "undo" styles in order to apply your own. Especially to elements like forms, lists, buttons, and blockquotes. Your design is yours, and we want it to stay that way. Our grid weighs in at only 8KB, 12KB including the CSS reset.
+Second is the amount of clutter. It is a very clean shop in comparison to other popular grids. While using a simple CSS reset, thanks to [Eric Meyer](http://meyerweb.com/eric/tools/css/reset/), we keep the rest of our grid to a minimum. You don't need to "undo" styles in order to apply your own. Especially to elements like forms, lists, buttons, and blockquotes. Your design is yours, and we want it to stay that way. Our grid weighs in at only 8KB, 12KB including the CSS reset.
 
-We have also included [https://github.com/scottjehl/Respond](Respond.js), a great script for adding CSS3 Media Query support to older versions of IE. Respond.js is fully compatible with Division, unlike with some other grids.
+We have also included [Respond.js](https://github.com/scottjehl/Respond), a great script for adding CSS3 Media Query support to older versions of IE. Respond.js is fully compatible with Division, unlike with some other grids.
 
 ##Usage
 Download the latest version and unzip. The index.html is a fully working example of how to use Division. It is a really really simple grid.
