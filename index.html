@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head profile="http://www.w3.org/2005/10/profile">
+<link rel="icon" type="image/png" href="css/images/favicon.png">
+<link rel="shortcut icon" href="css/images/favicon.ico" />
+  <meta charset="utf-8" />
+
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width" />
+
+  <title>Division Grid</title>
+  
+  <!-- Division CSS Files -->
+  <link rel="stylesheet" href="css/reset.min.css">
+  <link rel="stylesheet" href="css/division.css">
+  <!-- <link rel="stylesheet" href="css/division.min.css"> -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- /Division CSS Files -->
+
+  <!-- IE Fix for HTML5 Tags -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link href="stylesheets/prettify.css" type="text/css" rel="stylesheet" />
+
+</head>
+<body onload="prettyPrint()">
+
+<header>
+  <div class="row">
+    <div class="full">
+      <h1><a id="top" href="/"><img class="logo" src="css/images/logo.gif" alt=""/>Division</a></h1>
+    </div>
+  </div>
+</header>
+<div class="row content">
+    <div class="full">
+      <div class="row">
+        <div class="full">
+            <p><strong>Division</strong> isn't anything revolutionary when it comes to grids or grid customization. Inspired indirectly by <a href="http://foundation.zurb.com/docs/grid.php">Foundation</a>, yet designed with the undesigner in mind. <strong>Division</strong> is responsive with mobile specific options.</p>
+            <p>There are a couple major differences between <strong>Division</strong> and a grid like Foundation or Twitter Bootstrap. First is our naming convention, which we set up for lightning fast prototyping. You no longer have to be concerned with how many columns an element must be in order to be two thirds, one third, or three-fifths. This is an excellent starting point for designers who are doing rapid prototyping of a concept before handing it over to developers.</p>
+            <p>Second is the amount of clutter. We run a very clean shop in comparison to other popular grids. While using a simple CSS reset, thanks to <a href="http://meyerweb.com/eric/tools/css/reset/" target="new">Eric Meyer</a>, we keep the rest of our grid to a minimum. You don't need to "undo" styles in order to apply your own. Especially to elements like forms, lists, buttons, and blockquotes. Your design is <strong>yours</strong>, and we want it to stay that way. Our grid weighs in at only 8KB, 12KB including the CSS reset.</p>
+            <p>We have also included <a href="https://github.com/scottjehl/Respond" target="new">Respond.js</a>, a great script for adding <a href="http://www.w3.org/TR/css3-mediaqueries/" target="new">CSS3 Media Query</a> support to older versions of IE. Respond.js is fully compatible with <strong>Division</strong>, unlike with some other grids.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="full">
+          <h2><a id="usage"></a>Usage</h2>
+          <dl class="sub-nav">
+            <dt>Section:</dt>
+            <dd class="active"><a href="#usage" class="scroll">Usage</a></dd>
+            <dd><a href="#grid" class="scroll">The Grid</a></dd>
+            <dd><a href="#nesting" class="scroll">Nesting</a></dd>
+            <dd><a href="#moves" class="scroll">Moves</a></dd>
+            <dd><a href="#leftright" class="scroll">Left &amp; Right</a></dd>
+            <dd><a href="#center" class="scroll">Center</a></dd>
+            <dd><a href="#mobile" class="scroll">Mobile</a></dd>
+          </dl>
+          <div class="clear"></div>
+          <p>Implementation is simple. Copy division.css or division.min.css as well as reset.min.css into your Stylesheet directory, and then paste the code below all of your CSS files the head section of your site.</p>
+          <pre class="prettyprint">
+            &lt;link rel="stylesheet" href="STYLESHEET DIRECTORY/reset.min.css"&gt;
+            &lt;link rel="stylesheet" href="STYLESHEET DIRECTORY/division.min.css"&gt;
+          </pre>
+
+          <p>Copy respond.min.js into your Javascript directory, and paste the code below into your footer.</p>
+          <pre class="prettyprint">
+            &lt;script type="text/javascript" src="JAVASCRIPT DIRECTORY/respond.min.js"&gt;&lt;/script&gt;
+          </pre>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="full">
+          <h2><a id="grid"></a>The Grid</h2>
+          <dl class="sub-nav">
+            <dt>Section:</dt>
+            <dd><a href="#usage" class="scroll">Usage</a></dd>
+            <dd class="active"><a href="#grid" class="scroll">The Grid</a></dd>
+            <dd><a href="#nesting" class="scroll">Nesting</a></dd>
+            <dd><a href="#moves" class="scroll">Moves</a></dd>
+            <dd><a href="#leftright" class="scroll">Left &amp; Right</a></dd>
+            <dd><a href="#center" class="scroll">Center</a></dd>
+            <dd><a href="#mobile" class="scroll">Mobile</a></dd>
+          </dl>
+        </div>
+      </div>
+
+      <!-- HALF -->
+      <div class="row">
+        <div class="half lblue">
+          <p>half</p>
+        </div>
+        <div class="half dblue">
+          <p>half</p>
+        </div>
+      </div>
+
+      <pre class="prettyprint">
+        &lt;div class="row"&gt;
+          &lt;div class="half"&gt;
+            &lt;p&gt;half&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;div class="half"&gt;
+            &lt;p&gt;half&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      </pre>
+
+      <br />
+
+      <!-- THIRDS -->
+      <div class="row">
+        <div class="one-third lblue">
+          <p>one-third</p>
+        </div>
+        <div class="one-third dblue">
+          <p>one-third</p>
+        </div>
+        <div class="one-third lblue">
+          <p>one-third</p>
+        </div>
+      </div>
+
+      <pre class="prettyprint">
+        &lt;div class="row"&gt;
+          &lt;div class="one-third"&gt;
+            &lt;p&gt;one-third&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;div class="one-third"&gt;
+            &lt;p&gt;one-third&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;div class="one-third"&gt;
+            &lt;p>one-third&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      </pre>
+
+      <br />
+
+      <!-- QUARTERS -->
+      <div class="row">
+        <div class="one-quarter lblue">
+          <p>one-quarter</p>
+        </div>
+        <div class="one-quarter dblue">
+          <p>one-quarter</p>
+        </div>
+        <div class="one-quarter lblue">
+          <p>one-quarter</p>
+        </div>
+        <div class="one-quarter dblue">
+          <p>one-quarter</p>
+        </div>
+      </div>
+
+      <pre class="prettyprint">
+        &lt;div class="row"&gt;
+          &lt;div class="one-quarter"&gt;
+            &lt;p&gt;one-quarter&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;div class="one-quarter"&gt;
+            &lt;p&gt;one-quarter&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;div class="one-quarter"&gt;
+            &lt;p&gt;one-quarter&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;div class="one-quarter"&gt;
+            &lt;p&gt;one-quarter&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      </pre>
+
+      <br />
+
+      <!-- FIFTHS -->
+      <div class="row">
+        <div class="one-fifth lblue">
+          <p>one-fifth</p>
+        </div>
+        <div class="one-fifth dblue">
+          <p>one-fifth</p>
+        </div>
+        <div class="one-fifth lblue">
+          <p>one-fifth</p>
+        </div>
+        <div class="one-fifth dblue">
+          <p>one-fifth</p>
+        </div>
+        <div class="one-fifth lblue">
+          <p>one-fifth</p>
+        </div>
+      </div>
+
+      <pre class="prettyprint">
+        &lt;div class="row"&gt;
+          &lt;div class="one-fifth"&gt;
+            &lt;p&gt;one-fifth&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;div class="one-fifth"&gt;
+            &lt;p&gt;one-fifth&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;div class="one-fifth"&gt;
+            &lt;p&gt;one-fifth&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;div class="one-fifth"&gt;
+            &lt;p&gt;one-fifth&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;div class="one-fifth"&gt;
+            &lt;p&gt;one-fifth&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      </pre>
+
+      <br />
+
+      <!-- SIXTHS -->
+      <div class="row">
+        <div class="one-sixth lblue">
+          <p>one-sixth</p>
+        </div>
+        <div class="one-sixth dblue">
+          <p>one-sixth</p>
+        </div>
+        <div class="one-sixth lblue">
+          <p>one-sixth</p>
+        </div>
+        <div class="one-sixth dblue">
+          <p>one-sixth</p>
+        </div>
+        <div class="one-sixth lblue">
+          <p>one-sixth</p>
+        </div>
+        <div class="one-sixth dblue">
+          <p>one-sixth</p>
+        </div>
+      </div>
+
+      <pre class="prettyprint">
+        &lt;div class="row"&gt;
+          &lt;div class="one-sixth"&gt;
+            &lt;p&gt;one-sixth&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;div class="one-sixth"&gt;
+            &lt;p&gt;one-sixth&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;div class="one-sixth"&gt;
+            &lt;p&gt;one-sixth&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;div class="one-sixth"&gt;
+            &lt;p&gt;one-sixth&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;div class="one-sixth"&gt;
+            &lt;p&gt;one-sixth&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;div class="one-sixth"&gt;
+            &lt;p&gt;one-sixth&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      </pre>
+
+      <br />
+
+      <!-- TWO-THIRDS -->
+      <div class="row">
+        <div class="one-third lblue">
+          <p>one-third</p>
+        </div>
+        <div class="two-thirds dblue">
+          <p>two-thirds</p>
+        </div>
+      </div>
+
+      <pre class="prettyprint">
+        &lt;div class="row"&gt;
+          &lt;div class="one-third"&gt;
+            &lt;p&gt;one-third&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;div class="two-thirds"&gt;
+            &lt;p&gt;two-thirds&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      </pre>
+
+      <br />
+
+      <!-- TWO-FIFTHS/THREE-FIFTHS -->
+      <div class="row">
+        <div class="two-fifths lblue">
+            <p>two-fifths</p>
+        </div>
+        <div class="three-fifths dblue">
+            <p>three-fifths</p>
+        </div>
+      </div>
+
+      <pre class="prettyprint">
+        &lt;div class="row"&gt;
+          &lt;div class="two-fifths"&gt;
+              &lt;p&gt;two-fifths&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;div class="three-fifths"&gt;
+              &lt;p&gt;three-fifths&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      </pre>
+
+      <br />
+
+      <!-- FOUR-FIFTHS -->
+      <div class="row">
+        <div class="one-fifth lblue">
+            <p>one-fifth</p>
+        </div>
+        <div class="four-fifths dblue">
+            <p>four-fifths</p>
+        </div>
+      </div>
+
+      <pre class="prettyprint">
+        &lt;div class="row"&gt;
+          &lt;div class="one-fifth"&gt;
+              &lt;p&gt;one-fifth&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;div class="four-fifths"&gt;
+              &lt;p&gt;four-fifths&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      </pre>
+
+      <br />
+
+      <!-- FIVE-SIXTHS -->
+      <div class="row">
+        <div class="five-sixths dblue">
+            <p>five-sixths</p>
+        </div>
+        <div class="one-sixth lblue">
+            <p>one-sixth</p>
+        </div>
+      </div>
+
+      <pre class="prettyprint">
+        &lt;div class="row"&gt;
+          &lt;div class="five-sixths"&gt;
+              &lt;p&gt;five-sixths&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;div class="one-sixth"&gt;
+              &lt;p&gt;one-sixth&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      </pre>
+
+      <br />
+
+      <!-- THREE-QUARTERS -->
+      <div class="row">
+        <div class="one-quarter lblue">
+            <p>one-quarter</p>
+        </div>
+        <div class="three-quarters dblue">
+            <p>three-quarters</p>
+        </div>
+      </div>
+
+      <pre class="prettyprint">
+        &lt;div class="row"&gt;
+          &lt;div class="one-quarter"&gt;
+              &lt;p&gt;one-quarter&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;div class="three-quarters"&gt;
+              &lt;p&gt;three-quarters&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      </pre>
+      <h3>Last</h3>
+      <p>You can float the last division in a row to the right by adding a class of <i>last</i> to that division.</p>
+      <!-- THREE-QUARTERS -->
+      <div class="row">
+        <div class="one-quarter lblue">
+            <p>one-quarter</p>
+        </div>
+        <div class="one-quarter last dblue">
+            <p>one-quarter last</p>
+        </div>
+      </div>
+
+      <pre class="prettyprint">
+        &lt;div class="row"&gt;
+          &lt;div class="one-quarter"&gt;
+              &lt;p&gt;one-quarter&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;div class="one-quarter last"&gt;
+              &lt;p&gt;one-quarter last&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      </pre>
+      <!-- GRID -->
+
+      <!-- NESTING -->
+      <div class="row">
+        <div class="full">
+          <h2><a id="nesting"></a>Nesting</h2>
+          <p>Nesting is unlimited in depth and will always produce the correct proportions. Simple start a new <i>div class="row"</i> for each new set of nested divisions. <a href="#mobile">Mobile</a> divisions allow you to maintain a grid-like structure even on a mobile device.</p>
+          <dl class="sub-nav">
+            <dt>Section:</dt>
+            <dd><a href="#usage" class="scroll">Usage</a></dd>
+            <dd><a href="#grid" class="scroll">The Grid</a></dd>
+            <dd class="active"><a href="#nesting" class="scroll">Nesting</a></dd>
+            <dd><a href="#moves" class="scroll">Moves</a></dd>
+            <dd><a href="#leftright" class="scroll">Left &amp; Right</a></dd>
+            <dd><a href="#center" class="scroll">Center</a></dd>
+            <dd><a href="#mobile" class="scroll">Mobile</a></dd>
+          </dl>
+        </div>
+      </div>
+
+      <!-- EXAMPLE 1 -->
+      <div class="row">
+        <div class="one-quarter dblue">
+          <p>one-quarter</p>
+        </div>
+        <div class="three-quarters lblue">
+          <p>three-quarters</p>
+          <div class="row">
+            <div class="half dblue">
+              <p>half</p>
+              <div class="row">
+                <div class="two-thirds lblue">
+                  <p>two-thirds</p>
+                </div>
+              </div>
+              <br />
+            </div>
+            <div class="one-third dblue">
+              <p>one-third</p>
+              <div class="row">
+                <div class="two-fifths lblue">
+                  <p>two-fifths</p>
+                </div>
+                <div class="half last lblue">
+                  <p>half last</p>
+                </div>
+              </div>
+              <br />
+            </div>
+          </div>
+          <br />
+        </div>
+      </div>
+      <pre class="prettyprint">
+          &lt;div class="row"&gt;
+            &lt;div class="one-quarter"&gt;
+              &lt;p&gt;one-quarter&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class="three-quarters"&gt;
+              &lt;p&gt;three-quarters&lt;/p&gt;
+              &lt;div class="row"&gt;
+                &lt;div class="half"&gt;
+                  &lt;p&gt;half&lt;/p&gt;
+                  &lt;div class="row"&gt;
+                    &lt;div class="two-thirds"&gt;
+                      &lt;p&gt;two-thirds&lt;/p&gt;
+                    &lt;/div&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="one-third"&gt;
+                  &lt;p&gt;one-third&lt;/p&gt;
+                  &lt;div class="row"&gt;
+                    &lt;div class="two-fifths"&gt;
+                      &lt;p&gt;two-fifths&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class="half last"&gt;
+                      &lt;p&gt;half last&lt;/p&gt;
+                    &lt;/div&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+      </pre>
+      <!-- /NESTING -->
+
+      <!-- MOVES -->
+      <div class="row">
+        <div class="full">
+          <h2><a id="moves"></a>Moves</h2>
+          <p><i>Moves</i> are used to move a division. Instead of having to maintain a constant grid, you can simply <i>move</i> divisions as much as you'd like.
+          <dl class="sub-nav">
+            <dt>Section:</dt>
+            <dd><a href="#usage" class="scroll">Usage</a></dd>
+            <dd><a href="#grid" class="scroll">The Grid</a></dd>
+            <dd><a href="#nesting" class="scroll">Nesting</a></dd>
+            <dd class="active"><a href="#moves" class="scroll">Moves</a></dd>
+            <dd><a href="#leftright" class="scroll">Left &amp; Right</a></dd>
+            <dd><a href="#center" class="scroll">Center</a></dd>
+            <dd><a href="#mobile" class="scroll">Mobile</a></dd>
+          </dl>
+        </div>
+      </div>
+
+      <!-- EXAMPLE 1 -->
+      <div class="row">
+        <div class="one-quarter lblue">
+            <p>one-quarter</p>
+        </div>
+        <div class="one-quarter move-one-third dblue">
+            <p>three-quarters move-one-third</p>
+        </div>
+      </div>
+
+      <pre class="prettyprint">
+        &lt;div class="row"&gt;
+          &lt;div class="one-quarter"&gt;
+              &lt;p&gt;one-quarter&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;div class="three-quarters move-one-third"&gt;
+              &lt;p&gt;three-quarters move-one-third&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      </pre>
+
+      <!-- EXAMPLE 2 -->
+      <div class="row">
+        <div class="one-fifth lblue">
+            <p>one-fifth</p>
+        </div>
+        <div class="two-fifths move-one-fifth dblue">
+            <p>two-fifths move-one-fifth</p>
+        </div>
+        <div class="one-sixth lblue">
+            <p>one-sixth</p>
+        </div>
+      </div>
+
+      <pre class="prettyprint">
+        &lt;div class="row"&gt;
+          &lt;div class="one-fifth"&gt;
+              &lt;p&gt;one-fifth&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;div class="two-fifths move-one-fifth"&gt;
+              &lt;p&gt;two-fifths move-one-fifth&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;div class="one-sixth"&gt;
+              &lt;p&gt;one-sixth&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      </pre>
+      <!-- /MOVES -->
+
+      <!-- LEFT & RIGHT -->
+      <div class="row">
+        <div class="full">
+          <h2><a id="leftright"></a>Left &amp; Right</h2>
+          <p><i>Lefts</i> and <i>rights</i> allow you to position divisions to the left or right of each other while still maintaining the same linear code structure. If an item appears first in your code, on mobile it will display first, but using <i>lefts</i> and <i>rights</i> allow you to position items in a different order on desktops and tablet devices.
+          <dl class="sub-nav">
+            <dt>Section:</dt>
+            <dd><a href="#usage" class="scroll">Usage</a></dd>
+            <dd><a href="#grid" class="scroll">The Grid</a></dd>
+            <dd><a href="#nesting" class="scroll">Nesting</a></dd>
+            <dd><a href="#moves" class="scroll">Moves</a></dd>
+            <dd class="active"><a href="#leftright" class="scroll">Left &amp; Right</a></dd>
+            <dd><a href="#center" class="scroll">Center</a></dd>
+            <dd><a href="#mobile" class="scroll">Mobile</a></dd>
+          </dl>
+        </div>
+      </div>
+
+      <!-- EXAMPLE 1 -->
+      <div class="row">
+        <div class="one-fifth right-four-fifths lblue">
+            <p>one-fifth right-four-fifths</p>
+        </div>
+        <div class="four-fifths left-one-fifth dblue">
+            <p>four-fifths left-one-fifth (last in markup)</p>
+        </div>
+      </div>
+
+      <pre class="prettyprint">
+        &lt;div class="row"&gt;
+          &lt;div class="one-fifth right-four-fifths"&gt;
+              &lt;p&gt;one-fifth right-four-fifths&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;div class="four-fifths left-one-fifth"&gt;
+              &lt;p&gt;four-fifths left-one-fifth (last in markup)&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      </pre>
+
+      <!-- EXAMPLE 2 -->
+      <div class="row">
+        <div class="one-third right-two-thirds lblue">
+            <p>one-third right-two-thirds</p>
+        </div>
+        <div class="half left-one-third dblue">
+            <p>half left-half (last in markup)</p>
+        </div>
+      </div>
+
+      <pre class="prettyprint">
+        &lt;div class="row"&gt;
+          &lt;div class="one-third right-two-thirds"&gt;
+              &lt;p&gt;one-third right-two-thirds&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;div class="half left-one-third"&gt;
+              &lt;p&gt;half left-one-third (last in markup)&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      </pre>
+
+      <!-- EXAMPLE 3 -->
+      <div class="row">
+        <div class="half right-half lblue">
+            <p>half right-half</p>
+        </div>
+        <div class="half left-half dblue">
+            <p>half left-half (last in markup)</p>
+        </div>
+      </div>
+
+      <pre class="prettyprint">
+        &lt;div class="row"&gt;
+          &lt;div class="half right-half"&gt;
+              &lt;p&gt;half right-half&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;div class="half left-half"&gt;
+              &lt;p&gt;half left-half (last in markup)&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      </pre>
+      <!-- /LEFT & RIGHT -->
+
+      <!-- CENTER -->
+      <div class="row">
+        <div class="full">
+          <h2><a id="center"></a>Center</h2>
+          <p><i>Center</i> allows you to center a division without fear of it destroying the structure of divisions beneath it. Simply add the class <i>center</i> to any division div.</p>
+          <dl class="sub-nav">
+            <dt>Section:</dt>
+            <dd><a href="#usage" class="scroll">Usage</a></dd>
+            <dd><a href="#grid" class="scroll">The Grid</a></dd>
+            <dd><a href="#nesting" class="scroll">Nesting</a></dd>
+            <dd><a href="#moves" class="scroll">Moves</a></dd>
+            <dd><a href="#leftright" class="scroll">Left &amp; Right</a></dd>
+            <dd class="active"><a href="#center" class="scroll">Center</a></dd>
+            <dd><a href="#mobile" class="scroll">Mobile</a></dd>
+          </dl>
+        </div>
+      </div>
+
+      <!-- EXAMPLE 1 -->
+      <div class="row">
+        <div class="three-quarters center dblue">
+          <p>three-quarters center</p>
+        </div>
+      </div>
+
+      <pre class="prettyprint">
+        &lt;div class="row"&gt;
+            &lt;div class="three-quarters center"&gt;
+              &lt;p&gt;three-quarters center&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+      </pre>
+      <!-- /CENTER -->
+
+      <!-- MOBILE -->
+      <div class="row">
+        <div class="full">
+          <h2><a id="mobile"></a>Mobile</h2>
+          <p><strong>Division</strong> is supported even on mobile devices. Even though many grids have a mobile specific grid, we wanted to make it simpler to apply this to a grid. By giving any <strong>Division</strong> element an additional class of "<i>mobile</i>" you ensure any grid maintains it width no matter what device it is viewed on.</p>
+          <dl class="sub-nav">
+            <dt>Section:</dt>
+            <dd><a href="#usage" class="scroll">Usage</a></dd>
+            <dd><a href="#grid" class="scroll">The Grid</a></dd>
+            <dd><a href="#nesting" class="scroll">Nesting</a></dd>
+            <dd><a href="#moves" class="scroll">Moves</a></dd>
+            <dd><a href="#leftright" class="scroll">Left &amp; Right</a></dd>
+            <dd><a href="#center" class="scroll">Center</a></dd>
+            <dd class="active"><a href="#mobile" class="scroll">Mobile</a></dd>
+          </dl>
+        </div>
+      </div>
+
+      <!-- EXAMPLE 1 -->
+      <div class="row">
+        <div class="one-quarter mobile dblue">
+          <p>one-quarter mobile</p>
+        </div>
+        <div class="three-quarters mobile lblue">
+          <p>three-quarters mobile</p>
+            <div class="row">
+              <div class="half mobile dblue">
+                <p>three-fifths mobile</p>
+              </div>
+              <div class="one-third mobile dblue">
+                <p>one-third mobile</p>
+              </div>
+            </div>
+            <br />
+        </div>
+      </div>
+      <pre class="prettyprint">
+        &lt;div class="row"&gt;
+          &lt;div class="one-quarter mobile"&gt;
+            &lt;p&gt;one-quarter mobile&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;div class="three-quarters mobile"&gt;
+            &lt;p&gt;three-quarters mobile&lt;/p&gt;
+              &lt;div class="row"&gt;
+                &lt;div class="half mobile"&gt;
+                  &lt;p&gt;three-fifths mobile&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class="one-third mobile"&gt;
+                  &lt;p&gt;one-third mobile&lt;/p&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      </pre>
+    </div>
+    <!-- /MOBILE -->
+</div>
+
+<br />
+
+<footer class="row">
+    <div class="full copy">
+      <p>Created by <a href="http://ajtroxell.com">AJ Troxell</a>, inspired by <a href="http://adameham.com">Adam Ham</a>.<span class="top"><a href="#">Top^</a></span></p>
+        <div class="row">
+          <div class="three-quarters center commons"><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Division Grid</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://divisiongrid.com" property="cc:attributionName" rel="cc:attributionURL">AJ Troxell</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.
+          </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Division Files -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+<script type="text/javascript" src="js/respond.min.js"></script>
+
+<!-- Readme JS -->
+<script type="text/javascript" src="js/prettify.js"></script>
+<script src="js/jquery.functions.js"></script>
+
+</body>
+</html>
